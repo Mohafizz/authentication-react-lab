@@ -73,9 +73,9 @@ class AuthenticationForm extends Component {
         body: JSON.stringify(body)
       }
     )
-      .then(data => data.json())
-      .then(data => {
-        sessionStorage.setItem("token", data.user.token);
+      .then(response => response.json())
+      .then(response => {
+        sessionStorage.setItem("token", response.user.token);
       })
       .catch(err => console.log(err));
 
